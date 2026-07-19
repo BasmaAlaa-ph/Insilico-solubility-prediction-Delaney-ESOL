@@ -15,9 +15,8 @@ Aqueous solubility is one of the earliest checkpoints in oral drug development: 
 
 ## 📊 Pipeline Architecture & Logic Steps
 
-### 1️⃣ Data Inspection & Type Hardening
+### 1️⃣ Data Inspection 
 * **Auditing:** Inspected the dataset using `df.shape` (1,128 rows, 12 columns) and `df.columns.tolist()`.
-* **Defensive Type Checking:** Verified all formula-critical columns (`Calculated_LogP`, `Molecular Weight`, `Number of Rotatable Bonds`, `Aromatic_Proportion`) using `pd.to_numeric(errors='coerce')`, ensuring silent string-formatting issues surface as catchable missing values instead of corrupting downstream calculations.
 
 ### 2️⃣ Structural Reordering & Cleaning
 * **Logical Sequencing:** Repositioned `smiles` beside `Compound ID` and `measured log solubility` beside the calculated descriptor columns for direct visual comparison.
